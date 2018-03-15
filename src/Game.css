@@ -1,0 +1,59 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container div {
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row div {
+  width: 125px;
+}
+
+span {
+  display: inline-block;
+  margin: 0.5em;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 7.5px;
+  margin: 10px;
+  width: 30px;
+}
+
+.selected {
+  color: #ddd;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  cursor: not-allowed;
+}
+
+.used {
+  color: #bbb;
+  background-color: #aaa;
+  border: 1px solid #bbb;
+  cursor: not-allowed;
+}
+
+.fa-star {
+  margin: 0.5em;
+  font-size: 20px;
+}
