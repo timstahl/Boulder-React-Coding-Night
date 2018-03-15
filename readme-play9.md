@@ -1,8 +1,4 @@
 # Start
-* CLONE REPO
-* OPEN CODE
-* RUN PROJECT
-* OPEN BROWSER
 * Open src/App.js
 * Import Font Awesome: `import 'font-awesome/css/font-awesome.min.css';`
 * Remove everything inside the <div>
