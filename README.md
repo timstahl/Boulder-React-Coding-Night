@@ -1,10 +1,10 @@
 <img src="./brcnLogo.png" alt="Boulder React Coding Night logo" align="center" />
 
-#Welcome to the first Boulder React Coding Night!
+# Welcome to the first Boulder React Coding Night!
 
 
 ## Project Instructions
-* Fork and clone the repo: https://github.com/gooWee/Boulder-React-Coding-Night
+* Fork and clone this repo
 * Run `npm install`
 * Run `npm start`
 * Choose a game and the associated readme and begin!
