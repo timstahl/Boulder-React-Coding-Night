@@ -88,4 +88,6 @@
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
+        color: #FFDE17;
+        font-size: xx-large;
     }

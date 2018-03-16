@@ -60,13 +60,14 @@ export default class App extends Component {
 
 	  return (
 		  <div>
-			  <button onClick={() => {this.nextSeq()}}>Start</button>
+			  <button className="controls" onClick={() => {this.nextSeq()}}>Start</button>
 
 			  <div className="App">
 				  <Button id="a" isActive={activeButton === 0 || this.state.buttonPressed === 0} onClick={()=>this.onButtonClick(0)} />
 				  <Button id="b" isActive={activeButton === 1 || this.state.buttonPressed === 1} onClick={()=>this.onButtonClick(1)} />
 				  <Button id="c" isActive={activeButton === 2 || this.state.buttonPressed === 2} onClick={()=>this.onButtonClick(2)} />
 				  <Button id="d" isActive={activeButton === 3 || this.state.buttonPressed === 3} onClick={()=>this.onButtonClick(3)} />
+
 				  {/*<Start />*/}
 				  {/*<Counter />*/}
 			  </div>
