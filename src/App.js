@@ -24,7 +24,15 @@ export default class App extends Component {
   }
 
   startComputerPlay() {
+    setTimeout(()=>{ incrementCount(); },500);
+  }
 
+  incrementCount() {
+    if(this.state.count < this.state.sequence.length*2) {
+      this.setState({count: this.state.count+1});
+      setTimeout(()=>{ incrementCount(); },500);
+    }
+    
   }
   
   onButtonClick(btn){
@@ -41,12 +49,15 @@ export default class App extends Component {
   }
 
   render() {
+    let activeButton = -1;
+    if(this.state.count%2 ==0 && this.state.count < this.state.sequence.length*2 )
+      activeButton = this.state.sequence[this.state.count/2];
     return (
       <div className="App">
-        <Button onClick={()=>this.onButtonCLick(0)} />
-        <Button onClick={()=>this.onButtonCLick(1)} />
-        <Button onClick={()=>this.onButtonCLick(2)} />
-        <Button onClick={()=>this.onButtonCLick(3)} />
+        <Button id={activeButton == 0 ? 'B1_on' : 'B1_off'} onClick={()=>this.onButtonCLick(0)} />
+        <Button id={activeButton == 1 ? 'B1_on' : 'B1_off'} onClick={()=>this.onButtonCLick(1)} />
+        <Button id={activeButton == 2 ? 'B1_on' : 'B1_off'} onClick={()=>this.onButtonCLick(2)} />
+        <Button id={activeButton == 3 ? 'B1_on' : 'B1_off'} onClick={()=>this.onButtonCLick(3)} />
         <Start />
         <Counter />
       </div>
