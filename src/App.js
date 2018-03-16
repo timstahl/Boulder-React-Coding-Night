@@ -54,13 +54,17 @@ export default class App extends Component {
   }
 
   render() {
+    let count = this.state.sequence.length;
 	  let activeButton = -1;
 	  if(this.state.count%2 === 0 && this.state.count < this.state.sequence.length*2 )
 		  activeButton = this.state.sequence[this.state.count/2];
 
 	  return (
 		  <div>
-			  <button className="controls" onClick={() => {this.nextSeq()}}>Start</button>
+        <div className="controls">
+          <button className="controls-start" onClick={() => {this.nextSeq()}}>Start</button>
+          <span className="controls-count">{count}</span>
+        </div>
 
 			  <div className="app">
 				  <Button id="a" isActive={activeButton === 0 || this.state.buttonPressed === 0} onClick={()=>this.onButtonClick(0)} />
@@ -69,7 +73,6 @@ export default class App extends Component {
 				  <Button id="d" isActive={activeButton === 3 || this.state.buttonPressed === 3} onClick={()=>this.onButtonClick(3)} />
 
 				  {/*<Start />*/}
-				  {/*<Counter />*/}
 			  </div>
 		  </div>
     );
