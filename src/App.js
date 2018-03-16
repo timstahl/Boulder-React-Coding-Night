@@ -7,19 +7,19 @@ export default class App extends Component {
 
   constructor(props){
     super(props);
-    this.state = {count: 0, index: 0, sequence: [0,1,3], playersTurn: false}
+    this.state = {count: -1, index: 0, sequence: [], playersTurn: false, buttonPressed: -1}
 
   }
   
   youLose(){
-    this.setState({count: 0, index: 0, sequence: [], playersTurn: false})
+    this.setState({count: -1, index: 0, sequence: [], playersTurn: false})
   }
 
   nextSeq() {
     //increment count and seq and lightup
-    let x = Math.ceil(4*Math.random());
-    let nextSequence = this.state.sequence.push(x);
-    this.setState({count: 0, index: 0, sequence: nextSequence, playersTurn: false});
+    let x = Math.floor(4*Math.random());
+    this.state.sequence.push(x);
+    this.setState({count: 0, index: 0, sequence: this.state.sequence, playersTurn: false});
     this.startComputerPlay();
   }
 
@@ -34,36 +34,43 @@ export default class App extends Component {
     }
     
   }
-  
-  onButtonClick(btn){
+
+	onButtonClick(btn){
+    this.setState({buttonPressed: btn});
+    setTimeout(() => {this.setState({buttonPressed:-1});}, 500);
+
     if (btn == this.state.sequence[this.state.index]){
       let index = this.state.index + 1
       this.setState({index: index})
       if(index == this.state.sequence.length) {
-        this.nextSeq();
+        // We can start the next play, after a small delay.
+        setTimeout(() =>this.nextSeq(), 1500);
       }
-    } 
+    }
     else{
+      console.log('bad');
       this.youLose()
     }
   }
 
   render() {
-    let activeButton = -1;
-    if(this.state.count%2 ==0 && this.state.count < this.state.sequence.length*2 )
-      activeButton = this.state.sequence[this.state.count/2];
+	  let activeButton = -1;
+	  if(this.state.count%2 === 0 && this.state.count < this.state.sequence.length*2 )
+		  activeButton = this.state.sequence[this.state.count/2];
 
-    activeButton = 2;
-    return (
+	  return (
+		  <div>
+			  <button onClick={() => {this.nextSeq()}}>Start</button>
 
-      <div className="App">
-        <Button id="a" isActive={activeButton == 0} onClick={()=>this.onButtonCLick(0)} />
-        <Button id="b" isActive={activeButton == 1} onClick={()=>this.onButtonCLick(1)} />
-        <Button id="c" isActive={activeButton == 2} onClick={()=>this.onButtonCLick(2)} />
-        <Button id="d" isActive={activeButton == 3} onClick={()=>this.onButtonCLick(3)} />
-        {/*<Start />*/}
-        {/*<Counter />*/}
-      </div>
+			  <div className="App">
+				  <Button id="a" isActive={activeButton === 0 || this.state.buttonPressed === 0} onClick={()=>this.onButtonClick(0)} />
+				  <Button id="b" isActive={activeButton === 1 || this.state.buttonPressed === 1} onClick={()=>this.onButtonClick(1)} />
+				  <Button id="c" isActive={activeButton === 2 || this.state.buttonPressed === 2} onClick={()=>this.onButtonClick(2)} />
+				  <Button id="d" isActive={activeButton === 3 || this.state.buttonPressed === 3} onClick={()=>this.onButtonClick(3)} />
+				  {/*<Start />*/}
+				  {/*<Counter />*/}
+			  </div>
+		  </div>
     );
   }
 }

@@ -53,6 +53,30 @@
         background-color: #ED1C24;
         border-top-left-radius: 100%;
     }
+    .button--a-active {
+        top: 4%;
+        right: 4%;
+        background-color: #00F16B;
+        border-top-right-radius: 100%;
+    }
+    .button--b-active {
+        bottom: 4%;
+        right: 4%;
+        background-color: #6180FF;
+        border-bottom-right-radius: 100%;
+    }
+    .button--c-active {
+        bottom: 4%;
+        left: 4%;
+        background-color: #FFFE27;
+        border-bottom-left-radius: 100%;
+    }
+    .button--d-active {
+        top: 4%;
+        left: 4%;
+        background-color: #FF2C14;
+        border-top-left-radius: 100%;
+    }
 
     .controls {
         position: absolute;
