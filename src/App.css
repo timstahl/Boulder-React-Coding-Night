@@ -46,13 +46,13 @@
     .button--c {
         bottom: 4%;
         left: 4%;
-        background-color: #FFDE17;
+        background-color: #D5B700;
         border-bottom-left-radius: 100%;
     }
     .button--d {
         top: 4%;
         left: 4%;
-        background-color: #ED1C24;
+        background-color: #C71D09;
         border-top-left-radius: 100%;
     }
     .button--a-active {
@@ -70,13 +70,13 @@
     .button--c-active {
         bottom: 4%;
         left: 4%;
-        background-color: #FFFE27;
+        background-color: #F4D416;
         border-bottom-left-radius: 100%;
     }
     .button--d-active {
         top: 4%;
         left: 4%;
-        background-color: #FF2C14;
+        background-color: #FF260E;
         border-top-left-radius: 100%;
     }
 
@@ -90,6 +90,11 @@
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
-        color: #FFDE17;
-        font-size: xx-large;
+        color: #FFF;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 2em;
+        font-weight: 700;
+        outline: none;
+        cursor: pointer;
     }
