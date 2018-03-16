@@ -8,6 +8,7 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {count: 0, index: 0, sequence: [0,1,3], playersTurn: false}
+
   }
   
   youLose(){
@@ -16,14 +17,22 @@ export default class App extends Component {
 
   nextSeq() {
     //increment count and seq and lightup
+    let x = Math.ceil(4*Math.random());
+    let nextSequence = this.state.sequence.push(x);
+    this.setState({count: 0, index: 0, sequence: nextSequence, playersTurn: false});
+    startComputerPlay();
   }
 
+  startComputerPlay() {
+
+  }
+  
   onButtonClick(btn){
     if (btn == this.state.sequence[this.state.index]){
       let index = this.state.index + 1
       this.setState({index: index})
       if(index == this.state.sequence.length) {
-        nextSeq()
+        nextSeq();
       }
     } 
     else{
@@ -44,5 +53,5 @@ export default class App extends Component {
     );
   }
 }
-check index vs sequence, light up
-need an onclick tht passes down to button, checks sequence, start that init sequence
+// check index vs sequence, light up
+// need an onclick tht passes down to button, checks sequence, start that init sequence
