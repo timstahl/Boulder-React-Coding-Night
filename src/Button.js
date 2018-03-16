@@ -7,7 +7,7 @@ class Button extends Component {
   }
 
   render() {
-    const className = `button button--${this.props.id}`;
+    let className = `button button--${this.props.id}`;
     if (this.props.isActive) className += " active";
     return (
       <button className={className}>A</button>
