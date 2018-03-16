@@ -3,12 +3,26 @@ import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
 import Button from './Button.js';
 
+const tones = [
+  '/audio/tone-0.mp3',
+  '/audio/tone-1.mp3',
+  '/audio/tone-2.mp3',
+  '/audio/tone-3.mp3'
+];
+
 export default class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {count: -1, index: 0, sequence: [], playersTurn: false, buttonPressed: -1}
+  }
 
+  componentDidMount() {
+    this.tones = tones.map(src => {
+      const audio = document.createElement('audio');
+      audio.src = src;
+      return audio;
+    });
   }
 
   youLose(){
@@ -37,6 +51,7 @@ export default class App extends Component {
 
 	onButtonClick(btn){
     this.setState({buttonPressed: btn});
+    this.tones[btn].play();
     setTimeout(() => {this.setState({buttonPressed:-1});}, 500);
 
     if (btn == this.state.sequence[this.state.index]){
