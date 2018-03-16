@@ -26,6 +26,8 @@
         font-size: 0;
         cursor: pointer;
         border: 0;
+        outline: none;
+        transition: background 0.2s ease;
         -webkit-appearance: none;
         appearance: none;
     }

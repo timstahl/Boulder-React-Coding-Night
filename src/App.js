@@ -10,7 +10,7 @@ export default class App extends Component {
     this.state = {count: -1, index: 0, sequence: [], playersTurn: false, buttonPressed: -1}
 
   }
-  
+
   youLose(){
     this.setState({count: -1, index: 0, sequence: [], playersTurn: false})
   }
@@ -32,7 +32,7 @@ export default class App extends Component {
       this.setState({count: this.state.count+1});
       setTimeout(()=>{ this.incrementCount(); },500);
     }
-    
+
   }
 
 	onButtonClick(btn){
@@ -62,7 +62,7 @@ export default class App extends Component {
 		  <div>
 			  <button className="controls" onClick={() => {this.nextSeq()}}>Start</button>
 
-			  <div className="App">
+			  <div className="app">
 				  <Button id="a" isActive={activeButton === 0 || this.state.buttonPressed === 0} onClick={()=>this.onButtonClick(0)} />
 				  <Button id="b" isActive={activeButton === 1 || this.state.buttonPressed === 1} onClick={()=>this.onButtonClick(1)} />
 				  <Button id="c" isActive={activeButton === 2 || this.state.buttonPressed === 2} onClick={()=>this.onButtonClick(2)} />
