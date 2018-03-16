@@ -7,10 +7,10 @@ class Button extends Component {
   }
 
   render() {
+    const className = `button button--${this.props.id}`;
+    if (this.props.isActive) className += " active";
     return (
-      <div>
-        <p>This is a button</p>
-      </div>
+      <button className={className}>A</button>
     );
   }
 }

@@ -1,23 +1,67 @@
-.App {
-  text-align: center;
-}
+* { margin: 0; padding: 0; border: 0; }
+    html, body { margin: 0; padding: 0; height: 100%; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+    body {
+        height: 100%;
+        font-size: 16px;
+        background: url('background.jpg') 50% 50% no-repeat;
+        background-size: cover;
+    }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+    .app {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 700px;
+        height: 700px;
+        border-radius: 100%;
+        background: #333;
+        transform: translateX(-50%) translateY(-50%);
+        box-shadow: 0 0 100px rgba(0,0,0,0.9);
+    }
+    .button {
+        position: absolute;
+        width: 45%;
+        height: 45%;
+        font-size: 0;
+        cursor: pointer;
+        border: 0;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .button--a {
+        top: 4%;
+        right: 4%;
+        background-color: #00A14B;
+        border-top-right-radius: 100%;
+    }
+    .button--b {
+        bottom: 4%;
+        right: 4%;
+        background-color: #21409A;
+        border-bottom-right-radius: 100%;
+    }
+    .button--c {
+        bottom: 4%;
+        left: 4%;
+        background-color: #FFDE17;
+        border-bottom-left-radius: 100%;
+    }
+    .button--d {
+        top: 4%;
+        left: 4%;
+        background-color: #ED1C24;
+        border-top-left-radius: 100%;
+    }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
+    .controls {
+        position: absolute;
+        z-index: 10;
+        background-color: #333;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
