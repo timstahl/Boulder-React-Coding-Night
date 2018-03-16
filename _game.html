@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Simon Says</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+    * { margin: 0; padding: 0; border: 0; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+
+    body {
+        height: 100%;
+        font-size: 16px;
+        background: url('background.jpg') 50% 50% no-repeat;
+        background-size: cover;
+    }
+
+    .app {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 700px;
+        height: 700px;
+        border-radius: 100%;
+        background: #333;
+        transform: translateX(-50%) translateY(-50%);
+        box-shadow: 0 0 100px rgba(0,0,0,0.9);
+    }
+    .button {
+        position: absolute;
+        width: 45%;
+        height: 45%;
+        font-size: 0;
+        cursor: pointer;
+        border: 0;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .button--a {
+        top: 4%;
+        right: 4%;
+        background-color: #00A14B;
+        border-top-right-radius: 100%;
+    }
+    .button--b {
+        bottom: 4%;
+        right: 4%;
+        background-color: #21409A;
+        border-bottom-right-radius: 100%;
+    }
+    .button--c {
+        bottom: 4%;
+        left: 4%;
+        background-color: #FFDE17;
+        border-bottom-left-radius: 100%;
+    }
+    .button--d {
+        top: 4%;
+        left: 4%;
+        background-color: #ED1C24;
+        border-top-left-radius: 100%;
+    }
+
+    .controls {
+        position: absolute;
+        z-index: 10;
+        background-color: #333;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div id="root">
+
+
+    <div class="app">
+
+        <div class="controls">
+            <div class="counter">4</div>
+            <button class="start">Start</button>
+        </div>
+
+        <button class="button button--a">A</button>
+        <button class="button button--b">B</button>
+        <button class="button button--c">C</button>
+        <button class="button button--d">D</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
