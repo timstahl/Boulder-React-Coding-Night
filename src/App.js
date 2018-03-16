@@ -8,16 +8,16 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {count: 0, index: 0, sequence: [0,1,3], playersTurn: false}
-
   }
   
   youLose(){
-
+    this.setState({count: 0, index: 0, sequence: [], playersTurn: false})
   }
 
   nextSeq() {
     //increment count and seq and lightup
   }
+
   onButtonClick(btn){
     if (btn == this.state.sequence[this.state.index]){
       let index = this.state.index + 1
